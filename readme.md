@@ -15,7 +15,7 @@ If using es2015 `import`:
 import Bc64 from 'bc-64'
 ```
 
-Otherwise, include `node_modules/bc-64/dist/bc-64.js` in your project using your method of choice, and it'll be available on the global variable `Bc64`.
+Otherwise, include `node_modules/bc-64/dist/bc-64.min.js` in your project using your method of choice, and it'll be available on the global variable `Bc64`.
 
 # Usage
 
