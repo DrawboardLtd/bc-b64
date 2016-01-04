@@ -8,6 +8,15 @@ bc-64 provides methods to translate base64 strings to hexadecimal (and back).
 npm install --save bc-64
 ```
 
+# Import
+
+If using es2015 `import`:
+```javascript
+import Bc64 from 'bc-64'
+```
+
+Otherwise, include `node_modules/bc-64/dist/bc-64.min.js` in your project using your method of choice, and it'll be available on the global variable `Bc64`.
+
 # Usage
 
 Main methods are `fromHex` and `fromB64`. Each returns an object with the following properties:
@@ -17,19 +26,17 @@ Main methods are `fromHex` and `fromB64`. Each returns an object with the follow
 * b64Url: url-friendly base64 (`==` removed, and `/` replaced with `-`)
 
 ```javascript
-import { fromHex, fromB64 } from 'bc-64'
-
-fromHex('36bd108b-f65a-4853-9cd8-3c7dbb40cfd5')
+Bc64.fromHex('36bd108b-f65a-4853-9cd8-3c7dbb40cfd5')
 // or
-fromHex('36 bd 10 8b f6 5a 48 53 9c d8 3c 7d bb 40 cf d5')
+Bc64.fromHex('36 bd 10 8b f6 5a 48 53 9c d8 3c 7d bb 40 cf d5')
 // or
-fromHex('36bd108bf65a48539cd83c7dbb40cfd5')
+Bc64.fromHex('36bd108bf65a48539cd83c7dbb40cfd5')
 // or
-fromB64('Nr0Qi/ZaSFOc2Dx9u0DP1Q')
+Bc64.fromB64('Nr0Qi/ZaSFOc2Dx9u0DP1Q')
 // or
-fromB64('Nr0Qi/ZaSFOc2Dx9u0DP1Q==')
+Bc64.fromB64('Nr0Qi/ZaSFOc2Dx9u0DP1Q==')
 // or
-fromB64('Nr0Qi-ZaSFOc2Dx9u0DP1Q')
+Bc64.fromB64('Nr0Qi-ZaSFOc2Dx9u0DP1Q')
 ```
 
 all of which return:
