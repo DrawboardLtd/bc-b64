@@ -2,6 +2,12 @@
 
 bc-64 provides methods to translate base64 strings to hexadecimal (and back).
 
+# Install
+
+```
+npm install --save bc-64
+```
+
 # Usage
 
 Main methods are `fromHex` and `fromB64`. Each returns an object with the following properties:
@@ -11,17 +17,19 @@ Main methods are `fromHex` and `fromB64`. Each returns an object with the follow
 * b64Url: url-friendly base64 (`==` removed, and `/` replaced with `-`)
 
 ```javascript
-Bc64.fromHex('36bd108b-f65a-4853-9cd8-3c7dbb40cfd5')
+import { fromHex, fromB64 } from 'bc-64'
+
+fromHex('36bd108b-f65a-4853-9cd8-3c7dbb40cfd5')
 // or
-Bc64.fromHex('36 bd 10 8b f6 5a 48 53 9c d8 3c 7d bb 40 cf d5')
+fromHex('36 bd 10 8b f6 5a 48 53 9c d8 3c 7d bb 40 cf d5')
 // or
-Bc64.fromHex('36bd108bf65a48539cd83c7dbb40cfd5')
+fromHex('36bd108bf65a48539cd83c7dbb40cfd5')
 // or
-Bc64.fromB64('Nr0Qi/ZaSFOc2Dx9u0DP1Q')
+fromB64('Nr0Qi/ZaSFOc2Dx9u0DP1Q')
 // or
-Bc64.fromB64('Nr0Qi/ZaSFOc2Dx9u0DP1Q==')
+fromB64('Nr0Qi/ZaSFOc2Dx9u0DP1Q==')
 // or
-Bc64.fromB64('Nr0Qi-ZaSFOc2Dx9u0DP1Q')
+fromB64('Nr0Qi-ZaSFOc2Dx9u0DP1Q')
 ```
 
 all of which return:
