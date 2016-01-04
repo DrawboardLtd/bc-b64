@@ -1,5 +1,5 @@
 {
-  "name": "brick",
+  "name": "bc-64",
   "version": "0.0.1",
   "description": "starting point for npm moudles",
   "main": "lib/index.js",
@@ -14,8 +14,8 @@
     "test": "mocha --opts .mocha ./src/**/*_test.js",
     "watch:tests": "npm test -- --watch",
     "build:lib": "babel src -d lib",
-    "build:umd": "webpack src/index.js dist/brick.js --config webpack.config.dev.js",
-    "build:umd:min": "webpack src src/index.js dist/brick.min.js --config webpack.config.prod.js",
+    "build:umd": "webpack src/index.js dist/bc-64.js --config webpack.config.dev.js",
+    "build:umd:min": "webpack src src/index.js dist/bc-64.min.js --config webpack.config.prod.js",
     "build": "npm run build:lib && npm run build:umd && npm run build:umd:min",
     "prepublish": "npm run clean && npm run build"
   },
