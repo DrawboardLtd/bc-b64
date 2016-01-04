@@ -1,7 +1,7 @@
 {
   "name": "bc-64",
-  "version": "0.0.1",
-  "description": "starting point for npm moudles",
+  "version": "0.0.2",
+  "description": "A service for translating base64 to hexadecimal (and back).",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
   "files": [
@@ -21,12 +21,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "github.com/DrawboardLtd/brick"
+    "url": "github.com/DrawboardLtd/bc-64"
   },
   "keywords": [
     "Drawboard"
   ],
-  "author": "orodio",
+  "author": "bflngn",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.3.17",
