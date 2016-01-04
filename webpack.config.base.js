@@ -8,7 +8,7 @@ module.exports = {
   },
 
   output: {
-    library: 'Db64',
+    library: 'Bc64',
     libraryTarget: 'umd'
   },
 
