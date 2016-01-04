@@ -1,7 +1,7 @@
 {
   "name": "bc-64",
   "version": "0.0.1",
-  "description": "starting point for npm moudles",
+  "description": "A service for translating base64 to hexadecimal (and back).",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
   "files": [
@@ -26,7 +26,7 @@
   "keywords": [
     "Drawboard"
   ],
-  "author": "orodio",
+  "author": "bflngn",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.3.17",
