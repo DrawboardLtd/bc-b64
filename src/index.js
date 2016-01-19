@@ -41,7 +41,7 @@ var _h2b = (str) => {
       null,
       str.replace(/\r|\n/g, '').replace(/([\da-fA-F]{2}) ?/g, '0x$1 ').replace(/ +$/, '').split(' ')
     )
-  ).replace(/\=\=/g, '');
+  ).replace(/\=/g, '');
 }
 
 var _b2h = (str) => {
@@ -55,7 +55,7 @@ var _b2h = (str) => {
 
 var _dh2b = (hex) => {
   hex = hex.replace(/\-/g, '').match(/.{1,2}/g).join(' '); // fix hex formatting before conversion
-  return _h2b(hex).replace(/\=\=/g, '').replace(/\//g, '-'); // convert to b64, tweak b64 formatting for use in a URL
+  return _h2b(hex).replace(/\=/g, '').replace(/\//g, '-'); // convert to b64, tweak b64 formatting for use in a URL
 }
 
 var _b2dh = (b64) => {
