@@ -47,12 +47,3 @@ all of which return:
   b64Url: 'Nr0Qi-ZaSFOc2Dx9u0DP1Q'
 }
 ```
-
-## Deprecated methods
-
-Several other methods are still available on the api but are deprecated and will be removed or made internal-only in a future release. **Avoid these methods in favor of `fromHex` and `fromB64`:**
-
-* `b2h` (takes a b64 string and returns hex)
-* `h2b` (takes a hex string and returns b64)
-* `dh2b` (takes a hex string with dashes and returns b64)
-* `b2dh` (takes a b64 string and returns hex with dashes)

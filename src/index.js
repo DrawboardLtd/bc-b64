@@ -53,21 +53,6 @@ var _b2h = (str) => {
   return hex.join(' ');
 }
 
-var _dh2b = (hex) => {
-  hex = hex.replace(/\-/g, '').match(/.{1,2}/g).join(' '); // fix hex formatting before conversion
-  return _h2b(hex).replace(/\=/g, '').replace(/\//g, '-'); // convert to b64, tweak b64 formatting for use in a URL
-}
-
-var _b2dh = (b64) => {
-  b64 = b64.replace(/\-/g, '/');
-  var spacedHex = _b2h(b64).split(' ');
-  spacedHex.splice(10, 0, '-');
-  spacedHex.splice(8, 0, '-');
-  spacedHex.splice(6, 0, '-');
-  spacedHex.splice(4, 0, '-');
-  return spacedHex.join('');
-}
-
 var _h2dh = (str) => {
   str = _normalizeHex(str)
   var spacedHex = str.split(' ');
@@ -99,11 +84,6 @@ var _hexToPanObj = (str) => {
   }
 }
 
-var _deprecate = (msg, fn) => {
-  console.warn(msg)
-  return fn
-}
-
 export var fromHex = (str) => {
   return _hexToPanObj(_normalizeHex(str))
 }
@@ -111,9 +91,3 @@ export var fromHex = (str) => {
 export var fromB64 = (str) => {
   return fromHex(_b2h(_normalizeB64(str)))
 }
-
-// export deprecated methods:
-export var h2b = _deprecate('`h2b` is deprecated as a public method of base64Service. See `fromHex` instead.', _h2b)
-export var b2h = _deprecate('`b2h` is deprecated as a public method of base64Service. See `fromB64` instead.', _b2h)
-export var dh2b = _deprecate('`dh2b` is deprecated as a public method of base64Service. See `fromHex` instead.', _dh2b)
-export var b2dh = _deprecate('`b2dh` is deprecated as a public method of base64Service. See `fromB64` instead.', _b2dh)

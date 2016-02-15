@@ -1,6 +1,6 @@
 {
   "name": "bc-64",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "A service for translating base64 to hexadecimal (and back).",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
