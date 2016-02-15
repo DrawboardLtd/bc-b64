@@ -35,7 +35,7 @@ if (!window.atob) {
   }
 }
 
-export const h2b = str => {
+const h2b = str => {
   return window.btoa(
     String.fromCharCode.apply(
       null,
@@ -44,7 +44,7 @@ export const h2b = str => {
   ).replace(/\=/g, ``)
 }
 
-export const b2h = str => {
+const b2h = str => {
   for (var i = 0, bin = window.atob(str.replace(/[ \r\n]+$/, ``)), hex = []; i < bin.length; ++i) {
     let tmp = bin.charCodeAt(i).toString(16)
     if (tmp.length === 1) tmp = `0${ tmp }`
@@ -53,24 +53,7 @@ export const b2h = str => {
   return hex.join(` `)
 }
 
-export const dh2b = hex => {
-  hex = hex.replace(/\-/g, ``).match(/.{1,2}/g).join(` `) // fix hex formatting before conversion
-  return h2b(hex).replace(/\=/g, ``).replace(/\//g, `-`) // convert to b64, tweak b64 formatting for use in a URL
-}
-
-export const b2dh = b64 => {
-  b64 = b64.replace(/\-/g, `/`)
-  let spacedHex = b2h(b64).split(` `)
-
-  spacedHex.splice(10, 0, `-`)
-  spacedHex.splice(8, 0, `-`)
-  spacedHex.splice(6, 0, `-`)
-  spacedHex.splice(4, 0, `-`)
-
-  return spacedHex.join(``)
-}
-
-export const h2dh = str => {
+const h2dh = str => {
   let spacedHex = normalizeHex(str).split(` `)
 
   spacedHex.splice(10, 0, `-`)
